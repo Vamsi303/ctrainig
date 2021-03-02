@@ -1,0 +1,12 @@
+#include <stdio.h>
+int a=10;// global scope
+int main ()
+{ 
+    int b=11;//local scope
+    {
+        int c=12;// local scope
+        printf("%d ",c);
+        printf("%d ",a);
+    }
+
+}
