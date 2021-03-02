@@ -1,0 +1,64 @@
+// writing a file in text mode using c
+//reading a normal file in binary mode
+
+//---------------------writing-----------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int num1,num2,num3;
+   FILE *fptr;
+
+   // use appropriate location if you are using MacOS or Linux
+   fptr = fopen("program.txt","w");
+
+   if(fptr == NULL)
+   {
+      printf("Error!");   
+      exit(1);             
+   }
+
+   printf("Enter nums: ");
+   scanf("%d %d %d",&num1,&num2,&num3);
+
+   fprintf(fptr,"%d",num1);
+   fprintf(fptr,"\n%d",num2);
+   fprintf(fptr,"\n%d",num3);
+   fclose(fptr);
+
+   return 0;
+}
+
+
+//-----------End of Writing -------------------
+
+//--------------Reading -----------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+ 
+   unsigned char buffer[10000];
+
+   FILE *fptr;
+
+   if ((fptr = fopen("program.txt","rb")) == NULL){
+       printf("Error! opening file");
+
+       // Program exits if the file pointer returns NULL.
+       exit(1);
+   }
+
+        fread(buffer,sizeof(buffer),1,fptr);
+        printf(buffer);
+  
+   return 0;
+}
+
+
+//---------------End of Reading a file ----------------------
