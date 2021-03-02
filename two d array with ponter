@@ -1,0 +1,16 @@
+#include <stdio.h>
+ int
+main ()
+{
+int ar[2][2];
+ar[0][0] = 33;
+ar[0][1] = 22;
+ar[1][0] = 11;
+ar[1][1] = 10;
+printf ("%u\n", **(ar));
+printf ("%u\n", **(ar+0));
+printf ("%u\n", *(*(ar+0)+0));
+printf ("%u\n", *(*(ar+0)+1));
+printf ("%u\n", **(ar+1));
+printf("%u\n",*(*(ar+1)+1));
+}
